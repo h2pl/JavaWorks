@@ -17,4 +17,8 @@ public interface ExampleFacade {
 
     void query(int id);
 
+    static ExampleFacadeImpl getInstance() {
+        throw new UnsupportedOperationException();
+    }
+
 }

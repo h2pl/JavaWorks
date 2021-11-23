@@ -13,7 +13,7 @@ public interface ExampleService {
 
     void query(int id);
 
-    public static ExampleService getInstance() {
+    static ExampleServiceImpl getInstance() {
         throw new UnsupportedOperationException();
     }
 

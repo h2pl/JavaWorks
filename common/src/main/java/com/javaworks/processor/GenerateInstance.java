@@ -1,4 +1,4 @@
-package com.javaworks.apt;
+package com.javaworks.processor;
 
 import java.lang.annotation.*;
 

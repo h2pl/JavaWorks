@@ -2,7 +2,7 @@ package com.javaworks.apt.dependency;
 
 
 import com.alibaba.fastjson.JSON;
-import com.javaworks.apt.GenerateInstance;
+import com.javaworks.processor.GenerateInstance;
 
 /**
  * @Author: hpl
@@ -13,7 +13,7 @@ public class ExampleServiceImpl implements ExampleService {
 
     @Override
     public void insert(Example example) {
-        System.out.println("insert:" + JSON.toJSONString(example));
+        System.out.println("insert:" + example.toString());
     }
 
     @Override
@@ -32,4 +32,5 @@ public class ExampleServiceImpl implements ExampleService {
     public void query(int id) {
         System.out.println("query:" + id);
     }
+
 }

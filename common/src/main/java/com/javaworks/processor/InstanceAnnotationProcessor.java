@@ -1,6 +1,6 @@
-package com.javaworks.apt;
+package com.javaworks.processor;
 
-import com.google.common.collect.Sets;
+import com.javaworks.constants.CommonConstants;
 import com.sun.source.tree.Tree;
 import com.sun.tools.javac.api.JavacTrees;
 import com.sun.tools.javac.code.Flags;
@@ -20,13 +20,13 @@ import javax.annotation.processing.SupportedSourceVersion;
 import javax.lang.model.SourceVersion;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.TypeElement;
+import java.util.Collections;
 import java.util.Set;
 
 /**
  * @Author: hpl
  * @Date: 2021/11/19 14:17
  */
-
 @SupportedSourceVersion(SourceVersion.RELEASE_8)
 public class InstanceAnnotationProcessor extends AbstractProcessor {
 
@@ -43,7 +43,7 @@ public class InstanceAnnotationProcessor extends AbstractProcessor {
 
     @Override
     public Set<String> getSupportedAnnotationTypes() {
-        return Sets.newHashSet(GenerateInstance.class.getName());
+        return Collections.singleton(GenerateInstance.class.getName());
     }
 
     @Override
@@ -56,8 +56,8 @@ public class InstanceAnnotationProcessor extends AbstractProcessor {
     }
 
     private class ElementTreeVisitor extends TreeTranslator {
-        private final static String FILED_NAME = "_INSTANCE";
-        private final static String METHOD_NAME = "getInstance";
+        private final static String FILED_NAME = CommonConstants.DEFAULT_INSTANCE_NAME;
+        private final static String METHOD_NAME = CommonConstants.GET_INSTANCE_METHOD_NAME;
         private final Name fieldName;
         private final Name methodName;
 

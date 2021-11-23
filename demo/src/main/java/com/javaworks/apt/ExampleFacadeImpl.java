@@ -4,6 +4,7 @@ package com.javaworks.apt;
 import com.javaworks.apt.dependency.Example;
 import com.javaworks.apt.dependency.ExampleService;
 import com.javaworks.apt.dependency.ExampleServiceImpl;
+import com.javaworks.processor.GenerateInstance;
 
 /**
  * @Author: hpl
@@ -11,12 +12,7 @@ import com.javaworks.apt.dependency.ExampleServiceImpl;
  */
 @GenerateInstance
 public class ExampleFacadeImpl implements ExampleFacade {
-    private ExampleService exampleService = null;
-
-    ExampleFacadeImpl() {
-        super();
-        this.exampleService = InstanceUtil.getExampleServiceInstance(ExampleServiceImpl.class.getName());
-    }
+    private final ExampleService exampleService = InstanceUtil.getExampleServiceInstance(ExampleServiceImpl.class.getName());
 
     @Override
     public void insert(Example example) {
