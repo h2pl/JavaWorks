@@ -1,4 +1,4 @@
-package com.javaworks;
+package com.javaworks.gc;
 
 /**
  * Created by Intellij IDEA.
