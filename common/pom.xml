@@ -37,9 +37,9 @@
             <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
             </plugin>
-            <plugin>
-                <artifactId>maven-enforcer-plugin</artifactId>
-            </plugin>
+<!--            <plugin>-->
+<!--                <artifactId>maven-enforcer-plugin</artifactId>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 </project>
